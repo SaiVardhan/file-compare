@@ -1,5 +1,5 @@
 # filematcher
-match two files containing names.
+Rules:-
 
 rules of reading name from file :-
 
