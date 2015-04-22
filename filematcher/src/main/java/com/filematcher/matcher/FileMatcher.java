@@ -10,8 +10,7 @@ import com.filematcher.model.PersonName;
 
 public class FileMatcher {
 	public static void main(String[] args) throws Exception {
-		FileMatcher fileMatcher=new FileMatcher();
-		
+		FileMatcher fileMatcher=new FileMatcher();	
 		String firstFileName=args[0];
 		String secFileName=args[1];
 		List<PersonName> firstFileList=fileMatcher.loadFile(firstFileName);
