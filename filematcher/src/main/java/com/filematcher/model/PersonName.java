@@ -1,11 +1,14 @@
-package com.filematcher.datatypes;
+package com.filematcher.model;
 
 public class PersonName {
 	private String firstName;
 	private String[] middleName;
 	private String lastName;
 	
-	public PersonName(String completeName){
+	public PersonName(String completeName) throws Exception{
+		if(completeName==null){
+			throw new Exception("NAME CAN NOT BE NULL");
+		}
 		String[] nameTokens=completeName.split(" ");
 		if(nameTokens.length==2){ //means no middle name
 			firstName=nameTokens[0];
@@ -19,11 +22,20 @@ public class PersonName {
 			}
 		}else{ 								//means only first name
 			firstName=nameTokens[0];
-		}		
+		}	
 	}
 	
 	public String toString(){
-		return "first name :"+firstName+" last name :"+lastName;		
+		String middleNameStr="";
+		if(middleName!=null){
+		for(String middleNameToken:middleName){
+			middleNameStr=middleNameToken+" ";
+		}
+		return firstName+" "+middleNameStr+lastName;
+		}
+		else{
+			return firstName+" "+lastName;
+		}
 	}
 	
 	public boolean equals(Object matcherPerson){
