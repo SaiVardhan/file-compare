@@ -24,7 +24,7 @@
   </dependencies>
   <build>
 		<plugins>
-			<plugin>
+			<!-- <plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-jar-plugin</artifactId>
 				<version>2.6</version>
@@ -35,7 +35,21 @@
 						</manifest>
 					</archive>
 				</configuration>
-			</plugin>
+			</plugin> -->
+
+
+      <plugin>
+    <groupId>org.apache.maven.plugins</groupId>
+    <artifactId>maven-surefire-plugin</artifactId>
+    <version>2.7.2</version>
+<configuration>
+  <argLine>-javaagent:${sonar.jacoco.jar}=destfile=${sonar.jacoco.reportPath},includes=com.*</argLine>
+  <includes>
+    <include>**/*.class</include>
+  </includes>
+  <excludedGroups>com.test.annotation.type.IntegrationTest</excludedGroups>
+</configuration>
+</plugin>
 
         <plugin>
             <groupId>org.codehaus.mojo</groupId>
