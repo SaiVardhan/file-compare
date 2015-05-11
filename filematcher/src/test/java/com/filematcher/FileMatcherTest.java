@@ -52,7 +52,7 @@ public class FileMatcherTest {
 		List<PersonName> matchedList = fileMatcher.matchList(firstFileList,
 				secondFileList);
 
-		assertTrue(matchedList.size() == 0);
+		assertTrue(matchedList.size() == 1;
 	}
 
 	@Test
@@ -63,7 +63,7 @@ public class FileMatcherTest {
 		List<PersonName> matchedList = fileMatcher.matchList(firstFileList,
 				secondFileList);
 
-		assertTrue(matchedList.size() == 0);
+		assertTrue(matchedList.size() == 1);
 	}
 
 	@Test
